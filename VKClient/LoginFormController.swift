@@ -13,16 +13,21 @@ class LoginFormController: UIViewController {
     @IBOutlet var loginInput: UITextField!
     @IBOutlet var passwordInput: UITextField!
     @IBOutlet var ScrollView: UIScrollView!
+    
     @IBAction func loginButtonPressed(_ sender: Any) {
         
-        if loginInput.text == "Hello" && passwordInput.text == "World!"{
+        let checkResult = checkUserData()
+        
+        guard checkResult == true else {
+            showLoginError()
+            return
+        }
         
             let storyBoard = self.storyboard
             let viewController = storyBoard?.instantiateViewController(withIdentifier: "MainContentView")
             
             viewController?.modalPresentationStyle = .fullScreen
             self.present(viewController!, animated: true, completion: nil)
-        }
     }
     
     @objc func keyboardWasShown(notification: Notification){
@@ -71,6 +76,20 @@ class LoginFormController: UIViewController {
         
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func checkUserData() -> Bool {
+        
+        if loginInput.text == "Hello" && passwordInput.text == "World!"{
+            return true
+        }
+        return false
+    }
+    func showLoginError () {
+        let alert = UIAlertController(title: "Ошибка", message: "Введены некорректные данные пользователя", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
     
 
