@@ -7,6 +7,6 @@
 
 import UIKit
 
-class MainContentView: UIViewController {
+class MainContentView: UITabBarController {
     
 }

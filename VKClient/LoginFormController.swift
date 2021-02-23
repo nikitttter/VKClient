@@ -17,11 +17,13 @@ class LoginFormController: UIViewController {
         
         if loginInput.text == "Hello" && passwordInput.text == "World!"{
         
-            let storyBoard = self.storyboard
-            let viewController = storyBoard?.instantiateViewController(withIdentifier: "MainContentView")
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "MainContentView")
             
-            viewController?.modalPresentationStyle = .fullScreen
-            self.present(viewController!, animated: true, completion: nil)
+            viewController.modalPresentationStyle = .fullScreen
+            self.present(viewController, animated: true, completion: nil)
+            
+            
         }
     }
     
