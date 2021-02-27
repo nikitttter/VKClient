@@ -9,6 +9,11 @@ import UIKit
 
 class FriendsTableViewController: UITableViewController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.register(UINib(nibName: "FriendsTableViewCell", bundle: nil), forCellReuseIdentifier: "friendsCell")
+    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -19,7 +24,8 @@ class FriendsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "friendsCell", for: indexPath) as! FriendsTableViewCell
+        cell.userPic.image = UIImage(named: "123", in: nil, with: nil)
         return cell
     }
     
@@ -28,5 +34,6 @@ class FriendsTableViewController: UITableViewController {
         let vc = storyboard.instantiateViewController(withIdentifier: "friendsPhotoView")
         
         self.navigationController?.pushViewController(vc, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

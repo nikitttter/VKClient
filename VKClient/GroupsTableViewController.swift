@@ -16,7 +16,8 @@ class GroupsTableViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        tableView.register(UINib(nibName: "GroupsTableViewCell", bundle: nil), forCellReuseIdentifier: "userGroupCellIdentifier")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -38,8 +39,8 @@ class GroupsTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "userGroupCellIdentifier", for: indexPath)
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "userGroupCellIdentifier", for: indexPath) as! GroupsTableViewCell
+        cell.groupPic.image = UIImage(named: "123", in: nil, compatibleWith: nil)
         return cell
     }
     

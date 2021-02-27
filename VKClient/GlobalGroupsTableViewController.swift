@@ -12,6 +12,7 @@ class GlobalGroupsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.register(UINib(nibName: "GroupsTableViewCell", bundle: nil), forCellReuseIdentifier: "globalGroupCellIdentifier")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -33,7 +34,7 @@ class GlobalGroupsTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "globalGroupCellIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "globalGroupCellIdentifier", for: indexPath) as! GroupsTableViewCell
 
         // Configure the cell...
 

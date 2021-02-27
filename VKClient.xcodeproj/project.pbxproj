@@ -16,6 +16,10 @@
 		11FA944325D8349100EBD634 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FA944225D8349100EBD634 /* FriendsTableViewController.swift */; };
 		11FA944925E5424D00EBD634 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FA944825E5424D00EBD634 /* GroupsTableViewController.swift */; };
 		11FA944C25E549DD00EBD634 /* GlobalGroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FA944B25E549DD00EBD634 /* GlobalGroupsTableViewController.swift */; };
+		11FA945D25E9BEF300EBD634 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FA945B25E9BEF200EBD634 /* FriendsTableViewCell.swift */; };
+		11FA945E25E9BEF300EBD634 /* FriendsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FA945C25E9BEF200EBD634 /* FriendsTableViewCell.xib */; };
+		11FA946325E9D49100EBD634 /* GroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FA946125E9D49100EBD634 /* GroupsTableViewCell.swift */; };
+		11FA946425E9D49100EBD634 /* GroupsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FA946225E9D49100EBD634 /* GroupsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		11FA944225D8349100EBD634 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		11FA944825E5424D00EBD634 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
 		11FA944B25E549DD00EBD634 /* GlobalGroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalGroupsTableViewController.swift; sourceTree = "<group>"; };
+		11FA945B25E9BEF200EBD634 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
+		11FA945C25E9BEF200EBD634 /* FriendsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsTableViewCell.xib; sourceTree = "<group>"; };
+		11FA946125E9D49100EBD634 /* GroupsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewCell.swift; sourceTree = "<group>"; };
+		11FA946225E9D49100EBD634 /* GroupsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupsTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,8 @@
 		115A308625811EAC00DDBAC5 /* VKClient */ = {
 			isa = PBXGroup;
 			children = (
+				11FA946025E9D46E00EBD634 /* Groups */,
+				11FA945A25E9BEA000EBD634 /* Friends */,
 				115A308725811EAC00DDBAC5 /* AppDelegate.swift */,
 				115A308D25811EAC00DDBAC5 /* Main.storyboard */,
 				11FA944B25E549DD00EBD634 /* GlobalGroupsTableViewController.swift */,
@@ -74,6 +84,24 @@
 				115A309525811EAE00DDBAC5 /* Info.plist */,
 			);
 			path = VKClient;
+			sourceTree = "<group>";
+		};
+		11FA945A25E9BEA000EBD634 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				11FA945B25E9BEF200EBD634 /* FriendsTableViewCell.swift */,
+				11FA945C25E9BEF200EBD634 /* FriendsTableViewCell.xib */,
+			);
+			name = Friends;
+			sourceTree = "<group>";
+		};
+		11FA946025E9D46E00EBD634 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				11FA946125E9D49100EBD634 /* GroupsTableViewCell.swift */,
+				11FA946225E9D49100EBD634 /* GroupsTableViewCell.xib */,
+			);
+			path = Groups;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +163,9 @@
 			files = (
 				115A309425811EAE00DDBAC5 /* LaunchScreen.storyboard in Resources */,
 				115A309125811EAE00DDBAC5 /* Assets.xcassets in Resources */,
+				11FA946425E9D49100EBD634 /* GroupsTableViewCell.xib in Resources */,
 				115A308F25811EAC00DDBAC5 /* Main.storyboard in Resources */,
+				11FA945E25E9BEF300EBD634 /* FriendsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,9 +179,11 @@
 				115A308825811EAC00DDBAC5 /* AppDelegate.swift in Sources */,
 				11FA944925E5424D00EBD634 /* GroupsTableViewController.swift in Sources */,
 				11FA944C25E549DD00EBD634 /* GlobalGroupsTableViewController.swift in Sources */,
+				11FA945D25E9BEF300EBD634 /* FriendsTableViewCell.swift in Sources */,
 				11D500F5258826AC004D9471 /* LoginFormController.swift in Sources */,
 				11FA944325D8349100EBD634 /* FriendsTableViewController.swift in Sources */,
 				11FA943825D6C74700EBD634 /* MainContentView.swift in Sources */,
+				11FA946325E9D49100EBD634 /* GroupsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
