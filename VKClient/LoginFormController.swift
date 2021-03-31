@@ -11,7 +11,11 @@ class LoginFormController: UIViewController {
 
     @IBOutlet var SigninButton: UIButton!
     @IBOutlet var loginInput: UITextField!
-    @IBOutlet var passwordInput: UITextField!
+    @IBOutlet var passwordInput: UITextField! {
+        didSet {
+            passwordInput.isSecureTextEntry = true
+        }
+    }
     @IBOutlet var ScrollView: UIScrollView!
     
     @IBAction func loginButtonPressed(_ sender: Any) {

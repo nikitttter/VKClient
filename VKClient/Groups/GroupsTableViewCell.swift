@@ -30,4 +30,14 @@ class GroupsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func fillCell(name: String, pic: UIImage?, theme: String?, verification : Bool) {
+        groupName.text = name
+        groupPic.image = pic
+        groupTheme.text = theme
+        
+        if (verification) {
+            groupVerification.image = UIImage(systemName: "checkmark.circle.fill")
+        }
+        
+    }
 }

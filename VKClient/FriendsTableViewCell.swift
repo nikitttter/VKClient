@@ -27,11 +27,10 @@ class FriendsTableViewCell: UITableViewCell {
 
     }
     
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func fillCell(name: String, pic: UIImage?, status: String?, city : String?) {
+        userName.text = name
+        userPic.image = pic
+        userStatus.text = status
+        userCity.text = city
     }
-    
 }
