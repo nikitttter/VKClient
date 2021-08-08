@@ -8,7 +8,6 @@
 import UIKit
 
 class GroupsTableViewController: UITableViewController {
-
     var root : UIViewController? = nil
     var usersGroups = [AllGroups(name: "Пикабу", theme: "юмор", pic: UIImage(named: "pikabu")!, verification: true),
                        AllGroups(name: "SokoL[off]: Про Поп-культуру", theme: nil, pic: UIImage(named: "sokoloff")!, verification: true),
@@ -38,6 +37,7 @@ class GroupsTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         tableView.reloadData()
     }
 
@@ -62,7 +62,7 @@ class GroupsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        true
+        return true
     }
     
     

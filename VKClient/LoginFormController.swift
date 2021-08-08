@@ -8,7 +8,7 @@
 import UIKit
 
 class LoginFormController: UIViewController {
-
+    
     @IBOutlet var SigninButton: UIButton!
     @IBOutlet var loginInput: UITextField!
     @IBOutlet var passwordInput: UITextField! {
@@ -27,11 +27,11 @@ class LoginFormController: UIViewController {
             return
         }
         
-            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = storyBoard.instantiateViewController(withIdentifier: "MainContentView")
-            
-            viewController.modalPresentationStyle = .fullScreen
-            self.present(viewController, animated: true, completion: nil)
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: "MainContentView")
+        
+        viewController.modalPresentationStyle = .fullScreen
+        self.present(viewController, animated: true, completion: nil)
             
     }
     
@@ -40,9 +40,6 @@ class LoginFormController: UIViewController {
         let kbSize = (info.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue).cgRectValue.size
         let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: kbSize.height  , right: 0.0)
                 
-    
-        
-        
         self.ScrollView?.contentInset = contentInsets
         ScrollView?.scrollIndicatorInsets = contentInsets
     }

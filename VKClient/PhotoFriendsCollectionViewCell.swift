@@ -11,11 +11,24 @@ class PhotoFriendsCollectionViewCell: UICollectionViewCell {
 
 
     @IBOutlet var userPic: UIImageView! 
+    @IBOutlet var likeControl: LikeControl!
+    
+    var indexPath : IndexPath?
+    var data : [UserPhotos?]?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        //userPic.contentMode = .scaleAspectFill
+        likeControl.addTarget(self, action: #selector(changeLikeState), for: .valueChanged)
     }
-
+        
+    @objc func changeLikeState(){
+        
+        if let myData = data {
+            if let index = indexPath {
+                myData[index.section]?.photos[index.item].liked = likeControl.meLiked
+                myData[index.section]?.photos[index.item].numLikes = likeControl.numberOfLikes
+            }
+        }
+    }
 }

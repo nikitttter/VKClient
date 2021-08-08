@@ -20,7 +20,6 @@ class PhotoHeaderCollectionReusableView: UICollectionReusableView {
     @IBOutlet var albumName: UILabel! {
         didSet {
             albumName.backgroundColor = UIColor.lightGray
-            //albumName.bounds.inset(by: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
         }
     }
     

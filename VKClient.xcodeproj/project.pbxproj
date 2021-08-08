@@ -16,6 +16,9 @@
 		115A309125811EAE00DDBAC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 115A309025811EAE00DDBAC5 /* Assets.xcassets */; };
 		115A309425811EAE00DDBAC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 115A309225811EAE00DDBAC5 /* LaunchScreen.storyboard */; };
 		11D500F5258826AC004D9471 /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D500F4258826AC004D9471 /* LoginFormController.swift */; };
+		11DC14D62651837900F25DB6 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DC14D52651837900F25DB6 /* GradientView.swift */; };
+		11DF79E4268D2C8C004202F6 /* MyCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF79E3268D2C8C004202F6 /* MyCollectionView.swift */; };
+		11EA1D0F265573880085F431 /* LikeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA1D0E265573880085F431 /* LikeControl.swift */; };
 		11FA943825D6C74700EBD634 /* MainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FA943725D6C74700EBD634 /* MainContentView.swift */; };
 		11FA944325D8349100EBD634 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FA944225D8349100EBD634 /* FriendsTableViewController.swift */; };
 		11FA944925E5424D00EBD634 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FA944825E5424D00EBD634 /* GroupsTableViewController.swift */; };
@@ -41,6 +44,9 @@
 		115A309325811EAE00DDBAC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		115A309525811EAE00DDBAC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11D500F4258826AC004D9471 /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
+		11DC14D52651837900F25DB6 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		11DF79E3268D2C8C004202F6 /* MyCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionView.swift; sourceTree = "<group>"; };
+		11EA1D0E265573880085F431 /* LikeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeControl.swift; sourceTree = "<group>"; };
 		11FA943725D6C74700EBD634 /* MainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentView.swift; sourceTree = "<group>"; };
 		11FA944225D8349100EBD634 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		11FA944825E5424D00EBD634 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
@@ -99,12 +105,15 @@
 				11FA945A25E9BEA000EBD634 /* Friends */,
 				115A308725811EAC00DDBAC5 /* AppDelegate.swift */,
 				115A308D25811EAC00DDBAC5 /* Main.storyboard */,
+				11DF79E3268D2C8C004202F6 /* MyCollectionView.swift */,
+				11DC14D52651837900F25DB6 /* GradientView.swift */,
 				11FA944B25E549DD00EBD634 /* GlobalGroupsTableViewController.swift */,
 				11FA946D25EA555900EBD634 /* PhotoFriendsCollectionViewController.swift */,
 				11FA944825E5424D00EBD634 /* GroupsTableViewController.swift */,
 				11FA943725D6C74700EBD634 /* MainContentView.swift */,
 				11D500F4258826AC004D9471 /* LoginFormController.swift */,
 				11FA944225D8349100EBD634 /* FriendsTableViewController.swift */,
+				11EA1D0E265573880085F431 /* LikeControl.swift */,
 				115A309025811EAE00DDBAC5 /* Assets.xcassets */,
 				115A309225811EAE00DDBAC5 /* LaunchScreen.storyboard */,
 				115A309525811EAE00DDBAC5 /* Info.plist */,
@@ -219,14 +228,17 @@
 				115A308825811EAC00DDBAC5 /* AppDelegate.swift in Sources */,
 				11FA946E25EA555900EBD634 /* PhotoFriendsCollectionViewController.swift in Sources */,
 				11FA944925E5424D00EBD634 /* GroupsTableViewController.swift in Sources */,
+				11DC14D62651837900F25DB6 /* GradientView.swift in Sources */,
 				11137C7425F442C900BCE031 /* AllGroups.swift in Sources */,
 				11FA944C25E549DD00EBD634 /* GlobalGroupsTableViewController.swift in Sources */,
+				11EA1D0F265573880085F431 /* LikeControl.swift in Sources */,
 				11FA945D25E9BEF300EBD634 /* FriendsTableViewCell.swift in Sources */,
 				11D500F5258826AC004D9471 /* LoginFormController.swift in Sources */,
 				11FA944325D8349100EBD634 /* FriendsTableViewController.swift in Sources */,
 				11137C7E25FC37BE00BCE031 /* Users.swift in Sources */,
 				11FA946A25EA535200EBD634 /* PhotoFriendsCollectionViewCell.swift in Sources */,
 				11FA943825D6C74700EBD634 /* MainContentView.swift in Sources */,
+				11DF79E4268D2C8C004202F6 /* MyCollectionView.swift in Sources */,
 				11FA946325E9D49100EBD634 /* GroupsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

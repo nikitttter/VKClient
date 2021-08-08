@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,20 +20,32 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="noj-Lq-x4G">
                         <rect key="frame" x="0.0" y="0.0" width="250" height="195"/>
                     </imageView>
+                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vHC-oO-NO6" customClass="LikeControl" customModule="VKClient" customModuleProvider="target">
+                        <rect key="frame" x="196" y="162.5" width="49" height="27.5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="noj-Lq-x4G" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Pqr-Ds-eGA"/>
+                <constraint firstAttribute="bottom" secondItem="vHC-oO-NO6" secondAttribute="bottom" constant="5" id="Ui4-gN-B2c"/>
                 <constraint firstItem="noj-Lq-x4G" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="bNG-lf-DHX"/>
                 <constraint firstAttribute="bottom" secondItem="noj-Lq-x4G" secondAttribute="bottom" id="mfj-Gt-kBJ"/>
                 <constraint firstAttribute="trailing" secondItem="noj-Lq-x4G" secondAttribute="trailing" id="rZN-qp-dE3"/>
+                <constraint firstAttribute="trailing" secondItem="vHC-oO-NO6" secondAttribute="trailing" constant="5" id="rxo-AQ-KK8"/>
             </constraints>
             <size key="customSize" width="254" height="195"/>
             <connections>
+                <outlet property="likeControl" destination="vHC-oO-NO6" id="fVN-12-jLj"/>
                 <outlet property="userPic" destination="noj-Lq-x4G" id="Ymi-ga-E0M"/>
             </connections>
-            <point key="canvasLocation" x="155.07246376811597" y="-3.0133928571428572"/>
+            <point key="canvasLocation" x="-1030" y="-12"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

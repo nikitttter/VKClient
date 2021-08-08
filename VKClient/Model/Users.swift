@@ -21,16 +21,26 @@ class Users {
         self.city = city
         self.status = status
     }
-    
 }
 
-class UserPhotos{
+class UserPhotos {
     var title : String
-    var photos : [UIImage?]
+    var photos : [ImagePack]
     
-    init(title : String, photos : [UIImage?]) {
+    init(title : String, photos : [ImagePack]) {
         self.title = title
         self.photos = photos
     }
+}
+
+class ImagePack {
+    var img : UIImage
+    var liked : Bool
+    var numLikes : Int
     
+    init(img : UIImage?, liked : Bool, num : Int) {
+        self.img = img!
+        self.liked = liked
+        self.numLikes = num
+    }
 }

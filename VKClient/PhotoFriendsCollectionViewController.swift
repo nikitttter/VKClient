@@ -11,8 +11,27 @@ private let reuseIdentifier = "photofriendscell"
 
 class PhotoFriendsCollectionViewController: UICollectionViewController {
 
+    var pinchGestureAnchorScale: CGFloat?
+    
+    //lazy var tapGestureRecognizer : UITapGestureRecognizer =
+        lazy var pinchGestureRecognizer : UIPinchGestureRecognizer = {
 
+            let recognizer = UIPinchGestureRecognizer(target: self, action: #selector(handlePinchRecognizer(_:)))
+            recognizer.delegate = self
+
+        return recognizer
+    }()
+    var step: CGFloat = 0
+    
+    var numberPic : CGFloat = 3 {
+        didSet{
+            if (numberPic > 5 || numberPic < 1) {
+                numberPic = oldValue
+            }
+        }
+    }
     var userPhotos : [UserPhotos?]?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +42,8 @@ class PhotoFriendsCollectionViewController: UICollectionViewController {
         // Register cell classes
         self.collectionView.register(UINib(nibName: "PhotoFriendsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
         self.collectionView.register(UINib(nibName: "PhotoHeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "photoHeader")
-        
+        view.addGestureRecognizer(pinchGestureRecognizer)
+                
         // Do any additional setup after loading the view.
     }
     
@@ -52,19 +72,21 @@ class PhotoFriendsCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PhotoFriendsCollectionViewCell
-    
-        cell.userPic.image = userPhotos?[indexPath.section]?.photos[indexPath.item]
+        cell.userPic.image = userPhotos?[indexPath.section]?.photos[indexPath.item].img
+        cell.likeControl.setup(number: userPhotos?[indexPath.section]?.photos[indexPath.item].numLikes ?? 0, me: userPhotos?[indexPath.section]?.photos[indexPath.item].liked ?? false)
         cell.userPic.contentMode = .scaleToFill
-    
+        cell.data = userPhotos
+        cell.indexPath = indexPath
+        
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "photoHeader", for: indexPath) as! PhotoHeaderCollectionReusableView
         header.albumName.text = userPhotos?[indexPath.section]?.title
-        //header.albumName.backgroundColor = UIColor.lightGray//backgroundColor = UIColor.gray
         return header
     }
+    
     
   
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -73,17 +95,48 @@ class PhotoFriendsCollectionViewController: UICollectionViewController {
             
         }, completion: nil)
     }
-      
+    
+    @objc func handlePinchRecognizer(_ gestureRecognizer : UIPinchGestureRecognizer){
+                
+        switch gestureRecognizer.state {
+        
+        case .began :
+            self.pinchGestureAnchorScale = gestureRecognizer.scale
+            
+        case .changed :
+
+            step += gestureRecognizer.scale - self.pinchGestureAnchorScale!
+            self.pinchGestureAnchorScale! = gestureRecognizer.scale
+        
+        case .ended, .cancelled :
+            
+            self.pinchGestureAnchorScale = nil
+            step.round(.toNearestOrEven)
+        
+        default:
+                assert(pinchGestureAnchorScale == nil)
+                break
+        }
+        
+        
+        switch step {
+        case 1...5:
+
+            numberPic = 6-step
+            self.collectionViewLayout.invalidateLayout()
+        default:
+            step = 6-numberPic
+        }
+    }    
 }
 
-extension PhotoFriendsCollectionViewController: UICollectionViewDelegateFlowLayout{
+extension PhotoFriendsCollectionViewController: UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate{
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let interitemspace = self.collectionView(collectionView, layout: collectionViewLayout, minimumInteritemSpacingForSectionAt: indexPath.section)
-        let numberPic = CGFloat(4)
         
-        let size = (collectionView.frame.width - collectionView.safeAreaInsets.left - collectionView.safeAreaInsets.right - interitemspace * (numberPic - 1)) / numberPic
+        let size = ((collectionView.frame.width - collectionView.safeAreaInsets.left - collectionView.safeAreaInsets.right - interitemspace * (self.numberPic - 1)) / self.numberPic).rounded(.down)
         return CGSize(width: size, height: size)
 
     }
@@ -100,8 +153,17 @@ extension PhotoFriendsCollectionViewController: UICollectionViewDelegateFlowLayo
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 5
     }
+    
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 5, left: collectionView.safeAreaInsets.left, bottom: 5, right: collectionView.safeAreaInsets.right)
     }
-    
+
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return false
+    }
+
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return false
+    }
 }
