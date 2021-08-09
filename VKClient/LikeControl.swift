@@ -20,7 +20,6 @@ import UIKit
             pic.image = meLiked ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
             pic.tintColor =  meLiked ? UIColor.red : UIColor.blue
             numberOfLikes += meLiked ? 1 : -1
-            self.sendActions(for: .valueChanged)
             self.invalidateIntrinsicContentSize()
         }
     }
@@ -82,6 +81,7 @@ import UIKit
     
     @objc func onTap() {
         meLiked  = !meLiked
+        self.sendActions(for: .valueChanged)
     }
     
 

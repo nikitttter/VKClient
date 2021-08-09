@@ -11,6 +11,7 @@
 		11137C7025F4380900BCE031 /* PhotoHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11137C6E25F4380900BCE031 /* PhotoHeaderCollectionReusableView.xib */; };
 		11137C7425F442C900BCE031 /* AllGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11137C7325F442C900BCE031 /* AllGroups.swift */; };
 		11137C7E25FC37BE00BCE031 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11137C7D25FC37BE00BCE031 /* Users.swift */; };
+		114CAFE826C073CD003720B8 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114CAFE726C073CD003720B8 /* IconView.swift */; };
 		115A308825811EAC00DDBAC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115A308725811EAC00DDBAC5 /* AppDelegate.swift */; };
 		115A308F25811EAC00DDBAC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 115A308D25811EAC00DDBAC5 /* Main.storyboard */; };
 		115A309125811EAE00DDBAC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 115A309025811EAE00DDBAC5 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 		11137C6E25F4380900BCE031 /* PhotoHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		11137C7325F442C900BCE031 /* AllGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroups.swift; sourceTree = "<group>"; };
 		11137C7D25FC37BE00BCE031 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		114CAFE726C073CD003720B8 /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 		115A308425811EAC00DDBAC5 /* VKClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		115A308725811EAC00DDBAC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		115A308E25811EAC00DDBAC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			children = (
 				11FA945B25E9BEF200EBD634 /* FriendsTableViewCell.swift */,
 				11FA945C25E9BEF200EBD634 /* FriendsTableViewCell.xib */,
+				114CAFE726C073CD003720B8 /* IconView.swift */,
 			);
 			name = Friends;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				11D500F5258826AC004D9471 /* LoginFormController.swift in Sources */,
 				11FA944325D8349100EBD634 /* FriendsTableViewController.swift in Sources */,
 				11137C7E25FC37BE00BCE031 /* Users.swift in Sources */,
+				114CAFE826C073CD003720B8 /* IconView.swift in Sources */,
 				11FA946A25EA535200EBD634 /* PhotoFriendsCollectionViewCell.swift in Sources */,
 				11FA943825D6C74700EBD634 /* MainContentView.swift in Sources */,
 				11DF79E4268D2C8C004202F6 /* MyCollectionView.swift in Sources */,

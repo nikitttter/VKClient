@@ -9,33 +9,19 @@ import UIKit
 
 @IBDesignable class FriendsTableViewCell: UITableViewCell {
 
-    @IBOutlet var userPic: UIImageView! {
-        didSet {
-            userPic.layer.cornerRadius = userPic.frame.size.width/2
-            
-            userPic.layer.masksToBounds = true
-            
-            userPic.backgroundColor = UIColor.gray
-
-        }
-    }
     @IBOutlet weak var likes: LikeControl!
     @IBOutlet var userName: UILabel!
     @IBOutlet var userStatus: UILabel!
     @IBOutlet var userCity: UILabel!
-    @IBOutlet var shadowPic: UIImageView! {
+    @IBOutlet var userPicture: IconView! {
         didSet {
-            shadowPic.layer.cornerRadius = shadowPic.frame.size.width/2
-            
-            shadowPic.layer.masksToBounds = false
-            shadowPic.backgroundColor = UIColor.gray
-            
             self.updateShadowOffset()
             self.updateShadowRadius()
             self.updateShadowOpacity()
             self.updateShadowColor()
         }
     }
+    
     @IBOutlet weak var likeControl: LikeControl!
     
     
@@ -58,26 +44,27 @@ import UIKit
         }
     }
     
-    @IBInspectable var shadowOffset : CGSize = .zero {
+    @IBInspectable var shadowOffset : CGSize = CGSize(width: 5, height: 5) {
         didSet {
             self.updateShadowOffset()
         }
     }
     
     func updateShadowColor() {
-        self.shadowPic?.layer.shadowColor = self.shadowColor.cgColor
+        self.userPicture.layer.shadowColor = self.shadowColor.cgColor
     }
     
     func updateShadowOpacity() {
-        self.shadowPic?.layer.shadowOpacity = self.shadowOpacity
+        self.userPicture.layer.shadowOpacity = self.shadowOpacity
     }
     
     func updateShadowRadius() {
-        self.shadowPic?.layer.shadowRadius = self.shadowRadius
+        self.userPicture.layer.shadowRadius = self.shadowRadius
     }
     
     func updateShadowOffset() {
-        self.shadowPic?.layer.shadowOffset = self.shadowOffset
+        self.userPicture.layer.shadowOffset = self.shadowOffset
+
     }
     
     
@@ -89,8 +76,16 @@ import UIKit
     
     func fillCell(name: String, pic: UIImage?, status: String?, city : String?) {
         userName.text = name
-        userPic.image = pic
         userStatus.text = status
         userCity.text = city
+        userPicture.userPic?.image = pic
+        
+        self.userPicture.userPic?.layer.cornerRadius = self.userPicture.frame.size.width/2
+        self.userPicture.userPic?.layer.masksToBounds = true
+        self.userPicture.userPic?.backgroundColor = UIColor.gray
+                
+        self.userPicture.layer.cornerRadius = self.userPicture.frame.size.width/2
+        self.userPicture.layer.masksToBounds = false
+        self.userPicture.backgroundColor = .gray
     }
 }
