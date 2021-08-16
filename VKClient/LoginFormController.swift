@@ -82,7 +82,7 @@ class LoginFormController: UIViewController {
     
     func checkUserData() -> Bool {
         
-        if loginInput.text == "Hello" && passwordInput.text == "World!"{
+        if loginInput.text == "admin" && passwordInput.text == "1111"{
             return true
         }
         return false

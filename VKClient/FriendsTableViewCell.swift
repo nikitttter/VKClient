@@ -9,7 +9,6 @@ import UIKit
 
 @IBDesignable class FriendsTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var likes: LikeControl!
     @IBOutlet var userName: UILabel!
     @IBOutlet var userStatus: UILabel!
     @IBOutlet var userCity: UILabel!
@@ -20,13 +19,9 @@ import UIKit
             self.updateShadowRadius()
             self.updateShadowOpacity()
             self.updateShadowColor()
-            
-            
-            
+
         }
     }
-    
-    @IBOutlet weak var likeControl: LikeControl!
     
     @IBInspectable   var shadowColor : UIColor = .gray {
         didSet {
@@ -73,26 +68,25 @@ import UIKit
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-       // userPicture.updateConstraints()
-        //self.translatesAutoresizingMaskIntoConstraints = false
     }
+    
     
     func fillCell(name: String, pic: UIImage?, status: String?, city : String?) {
         userName.text = name
         userStatus.text = status
         userCity.text = city
         userPicture.userPic?.image = pic
-
-        print(self.userPicture.frame.size.width)
-        print(self.frame.height)
-        //print(s.frame.height)
-        self.userPicture.userPic?.layer.masksToBounds = true
-        self.userPicture.userPic?.backgroundColor = UIColor.gray
-        self.userPicture.layer.cornerRadius = self.userPicture.frame.size.width/2
-        self.userPicture.userPic?.layer.cornerRadius = self.userPicture.frame.size.width/2
+    }
+    
+    override func layoutIfNeeded() {
+        super.layoutIfNeeded()
         
- 
         self.userPicture.layer.masksToBounds = false
         self.userPicture.backgroundColor = .gray
+        self.userPicture.layer.cornerRadius = self.userPicture.frame.size.width/2
+        self.userPicture.userPic?.layer.masksToBounds = true
+        self.userPicture.userPic?.backgroundColor = .gray
+        self.userPicture.userPic?.layer.cornerRadius = self.userPicture.frame.size.width/2
     }
+    
 }

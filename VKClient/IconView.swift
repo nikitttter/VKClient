@@ -15,26 +15,19 @@ class IconView: UIView {
         super.init(coder: coder)
         
         self.userPic = UIImageView()
-        //userPic?.frame = self.bounds
-//        self.userPic!.translatesAutoresizingMaskIntoConstraints  = true
         self.addSubview(self.userPic!)
+        self.layoutSubviews()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         self.userPic = UIImageView()
-//        self.userPic!.translatesAutoresizingMaskIntoConstraints  = true
-       // userPic?.frame = self.bounds
         self.addSubview(self.userPic!)
-        
+        self.layoutSubviews()
 
     }
     
-    
-//    override var intrinsicContentSize: CGSize {
-//        return CGSize(width: userPic!.intrinsicContentSize.width, height: userPic!.intrinsicContentSize.height)
-//    }
     override func layoutSubviews() {
         super.layoutSubviews()
         self.userPic?.frame = self.bounds
