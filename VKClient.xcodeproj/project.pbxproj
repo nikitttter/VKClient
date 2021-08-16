@@ -11,6 +11,7 @@
 		11137C7025F4380900BCE031 /* PhotoHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11137C6E25F4380900BCE031 /* PhotoHeaderCollectionReusableView.xib */; };
 		11137C7425F442C900BCE031 /* AllGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11137C7325F442C900BCE031 /* AllGroups.swift */; };
 		11137C7E25FC37BE00BCE031 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11137C7D25FC37BE00BCE031 /* Users.swift */; };
+		113B8EB626C286F500A0ED38 /* CharacterPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113B8EB526C286F500A0ED38 /* CharacterPicker.swift */; };
 		114CAFE826C073CD003720B8 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114CAFE726C073CD003720B8 /* IconView.swift */; };
 		115A308825811EAC00DDBAC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115A308725811EAC00DDBAC5 /* AppDelegate.swift */; };
 		115A308F25811EAC00DDBAC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 115A308D25811EAC00DDBAC5 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 		11137C6E25F4380900BCE031 /* PhotoHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		11137C7325F442C900BCE031 /* AllGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroups.swift; sourceTree = "<group>"; };
 		11137C7D25FC37BE00BCE031 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		113B8EB526C286F500A0ED38 /* CharacterPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPicker.swift; sourceTree = "<group>"; };
 		114CAFE726C073CD003720B8 /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 		115A308425811EAC00DDBAC5 /* VKClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		115A308725811EAC00DDBAC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				11D500F4258826AC004D9471 /* LoginFormController.swift */,
 				11FA944225D8349100EBD634 /* FriendsTableViewController.swift */,
 				11EA1D0E265573880085F431 /* LikeControl.swift */,
+				113B8EB526C286F500A0ED38 /* CharacterPicker.swift */,
 				115A309025811EAE00DDBAC5 /* Assets.xcassets */,
 				115A309225811EAE00DDBAC5 /* LaunchScreen.storyboard */,
 				115A309525811EAE00DDBAC5 /* Info.plist */,
@@ -238,6 +241,7 @@
 				11FA945D25E9BEF300EBD634 /* FriendsTableViewCell.swift in Sources */,
 				11D500F5258826AC004D9471 /* LoginFormController.swift in Sources */,
 				11FA944325D8349100EBD634 /* FriendsTableViewController.swift in Sources */,
+				113B8EB626C286F500A0ED38 /* CharacterPicker.swift in Sources */,
 				11137C7E25FC37BE00BCE031 /* Users.swift in Sources */,
 				114CAFE826C073CD003720B8 /* IconView.swift in Sources */,
 				11FA946A25EA535200EBD634 /* PhotoFriendsCollectionViewCell.swift in Sources */,

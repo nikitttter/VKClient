@@ -15,16 +15,18 @@ import UIKit
     @IBOutlet var userCity: UILabel!
     @IBOutlet var userPicture: IconView! {
         didSet {
+     
             self.updateShadowOffset()
             self.updateShadowRadius()
             self.updateShadowOpacity()
             self.updateShadowColor()
+            
+            
+            
         }
     }
     
     @IBOutlet weak var likeControl: LikeControl!
-    
-    
     
     @IBInspectable   var shadowColor : UIColor = .gray {
         didSet {
@@ -71,20 +73,25 @@ import UIKit
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+       // userPicture.updateConstraints()
+        //self.translatesAutoresizingMaskIntoConstraints = false
     }
-
     
     func fillCell(name: String, pic: UIImage?, status: String?, city : String?) {
         userName.text = name
         userStatus.text = status
         userCity.text = city
         userPicture.userPic?.image = pic
-        
-        self.userPicture.userPic?.layer.cornerRadius = self.userPicture.frame.size.width/2
+
+        print(self.userPicture.frame.size.width)
+        print(self.frame.height)
+        //print(s.frame.height)
         self.userPicture.userPic?.layer.masksToBounds = true
         self.userPicture.userPic?.backgroundColor = UIColor.gray
-                
         self.userPicture.layer.cornerRadius = self.userPicture.frame.size.width/2
+        self.userPicture.userPic?.layer.cornerRadius = self.userPicture.frame.size.width/2
+        
+ 
         self.userPicture.layer.masksToBounds = false
         self.userPicture.backgroundColor = .gray
     }
