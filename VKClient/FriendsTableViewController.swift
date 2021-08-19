@@ -59,10 +59,10 @@ class FriendsTableViewController: UIViewController, UITableViewDelegate, UITable
         super.viewWillAppear(animated)
         control?.backgroundColor = .gray
         control!.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addConstraint(control!.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 0))
+
+        self.view.addConstraint(control!.centerYAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerYAnchor))
         self.view.addConstraint(control!.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0))
-        self.view.addConstraint(control!.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0))
-        self.view.addConstraint(control!.widthAnchor.constraint(equalToConstant: 100))
+
     }
     
      func numberOfSections(in tableView: UITableView) -> Int {

@@ -56,12 +56,12 @@ class CharacterPicker: UIControl {
             
             let label = UILabel()
             label.text = String(char)
-            
             stackView.addArrangedSubview(label)
             
         }
         self.addSubview(stackView)
-        
+        invalidateIntrinsicContentSize()
+
         panRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panHandler(_:)))
         panRecognizer?.maximumNumberOfTouches = 1
         
@@ -113,6 +113,18 @@ class CharacterPicker: UIControl {
     @objc func handleTapGesture (_ gestureRecognizer : UITapGestureRecognizer) {
         print(gestureRecognizer.location(in: self))
         updateSelectedChar(point: gestureRecognizer.location(in: self))
+    }
+    
+    override var intrinsicContentSize: CGSize {
+        var height : CGFloat = 0.0
+        var width : CGFloat = 0.0
+        for item in self.stackView.arrangedSubviews {
+            height += item.intrinsicContentSize.height
+            width += item.intrinsicContentSize.width
+        }
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = width/2
+        return CGSize(width: width, height: height)
     }
     
     /*

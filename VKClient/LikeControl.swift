@@ -35,8 +35,6 @@ import UIKit
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-
-
     }
     
     func setup(number likes : Int = 0, me liked : Bool = false) {
