@@ -120,7 +120,9 @@ class CharacterPicker: UIControl {
         var width : CGFloat = 0.0
         for item in self.stackView.arrangedSubviews {
             height += item.intrinsicContentSize.height
-            width += item.intrinsicContentSize.width
+            if  item.intrinsicContentSize.width > width {
+                width = item.intrinsicContentSize.width
+            }
         }
         self.layer.masksToBounds = true
         self.layer.cornerRadius = width/2
